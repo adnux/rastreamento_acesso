@@ -29,9 +29,18 @@ uuid = () => {
 	});
 }
 
+let key;
+if(localStorage.getItem('key')){
+	key = localStorage.getItem('key');
+} else {
+	key = uuid();
+	localStorage.setItem('key',key);
+}
+console.log('key:'+key);
+
 let data = JSON.stringify({
 	'acesso': {
-		'key': uuid(),
+		'key': key,
 		'url': window.location.href,
 		'date': (new Date()).toISOString().substring(0, 19).replace('T', ' ')
 	}
@@ -49,8 +58,6 @@ let request = new Request(
 		body: data
 	}
 );
-
-console.log('hasStorage:'+hasStorage);
 
 fetch(request)
 .then((resp) => resp.json())
