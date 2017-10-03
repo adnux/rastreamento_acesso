@@ -1,7 +1,12 @@
 sendContact = () => {
 	let email = document.getElementById("email").value;
+	let contato = JSON.stringify({
+		'contato': {
+			'email': email
+		}
+	});
 	let request = new Request(
-		'http://localhost:3000/contatos',
+		'http://localhost:3000/contatos/',
 		{
 			method: 'POST',
 			mode: 'no-cors',
@@ -9,7 +14,7 @@ sendContact = () => {
 				'Content-Type': 'application/json',
 				'Accept': 'application/json, */*',
 			}),
-			body: JSON.stringify({ 'email': email })
+			body: contato
 		}
 	);
 	fetch(request)
@@ -30,11 +35,11 @@ uuid = () => {
 }
 
 let key;
-if(localStorage.getItem('key')){
-	key = localStorage.getItem('key');
+if(localStorage.getItem('rd_user_key')){
+	key = localStorage.getItem('rd_user_key');
 } else {
 	key = uuid();
-	localStorage.setItem('key',key);
+	localStorage.setItem('rd_user_key',key);
 }
 console.log('key:'+key);
 
@@ -47,7 +52,7 @@ let data = JSON.stringify({
 })
 
 let request = new Request(
-	'http://localhost:3000/acessos',
+	'http://localhost:3000/acessos/',
 	{
 		method: 'POST',
 		mode: 'no-cors',
