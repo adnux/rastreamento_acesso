@@ -24,6 +24,9 @@ https://vast-hamlet-73400.herokuapp.com/acessos
 * Base "contatos path":
 https://vast-hamlet-73400.herokuapp.com/contatos
 
+## Sample Site
+https://vast-hamlet-73400.herokuapp.com/acessos
+
 ## Example Site
 
 The code for the example site is inside folder 'site'
