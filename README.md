@@ -1,24 +1,40 @@
-# README
+# Rastreamento de Acesso
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Environment
+This app was build with Ruby 2.4.2 and Rails 5.1.4.
 
-Things you may want to cover:
+## Install
+* Install dependencies:
+```console
+$ bundle install
+```
+* Create and generate database migrations:
+```console
+$ rake db:create
+$ rake db:migrate
+```
+* Start the api
+```console
+$ rails s
+```
+## API endpoints
+* Base "acessos" path:
+https://vast-hamlet-73400.herokuapp.com/acessos
 
-* Ruby version
+* Base "contatos path":
+https://vast-hamlet-73400.herokuapp.com/contatos
 
-* System dependencies
+## Example Site
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The code for the example site is inside folder 'site'
+```
+- site
+  |- js
+    |- access_crawler.js
+  |- css
+    |- bootstrap.css
+    |- bootstrap.min.css
+  |- index.html
+  |- price.html
+  |- contact.html
+```

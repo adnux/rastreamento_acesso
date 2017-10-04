@@ -1,6 +1,7 @@
 default: &default
-  adapter: postgresql
-  database: rastreamento_acesso
+  #adapter: postgresql
+  adapter: sqlite3
+  #database: rastreamento_acesso
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
